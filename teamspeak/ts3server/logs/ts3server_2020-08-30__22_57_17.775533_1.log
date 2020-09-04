@@ -1,0 +1,8 @@
+2020-08-30 22:57:19.151897|INFO    |VirtualServerBase|1  |listening on 0.0.0.0:9987, [::]:9987
+2020-08-30 22:57:19.152237|WARNING |VirtualServer |1  |--------------------------------------------------------
+2020-08-30 22:57:19.152256|WARNING |VirtualServer |1  |ServerAdmin privilege key created, please use the line below
+2020-08-30 22:57:19.152269|WARNING |VirtualServer |1  |token=YRSwMhICPP3E7NhokpckT0QSHmBMM7yo0+Q1bIOE
+2020-08-30 22:57:19.152281|WARNING |VirtualServer |1  |--------------------------------------------------------
+2020-08-30 22:57:55.519242|INFO    |VirtualServer |1  |client (id:3) was added to servergroup 'Server Admin'(id:6) by client 'server'(id:0)
+2020-08-30 22:57:55.519803|INFO    |VirtualServer |1  |client 'senninFABIO'(id:3) used privilege key 'YRSwMhICPP3E7NhokpckT0QSHmBMM7yo0+Q1bIOE' and was added to servergroup 'Server Admin'(id:6)
+2020-08-30 23:00:50.459662|INFO    |VirtualServerBase|1  |stopped

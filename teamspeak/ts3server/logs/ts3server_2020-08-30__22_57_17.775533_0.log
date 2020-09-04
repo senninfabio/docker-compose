@@ -1,0 +1,23 @@
+2020-08-30 22:57:17.775569|INFO    |ServerLibPriv |   |TeamSpeak 3 Server 3.12.1 (2020-03-27 10:38:47)
+2020-08-30 22:57:17.775640|INFO    |ServerLibPriv |   |SystemInformation: Linux 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 Binary: 64bit
+2020-08-30 22:57:17.775660|INFO    |ServerLibPriv |   |Using hardware aes
+2020-08-30 22:57:17.775847|INFO    |DatabaseQuery |   |dbPlugin name:    SQLite3 plugin, Version 3, (c)TeamSpeak Systems GmbH
+2020-08-30 22:57:17.775879|INFO    |DatabaseQuery |   |dbPlugin version: 3.11.1
+2020-08-30 22:57:17.776055|INFO    |DatabaseQuery |   |checking database integrity (may take a while)
+2020-08-30 22:57:17.814554|INFO    |SQL           |   |db_CreateTables() tables created
+2020-08-30 22:57:17.944906|WARNING |Accounting    |   |Unable to open licensekey.dat, falling back to limited functionality
+2020-08-30 22:57:17.973419|INFO    |Accounting    |   |Licensing Information
+2020-08-30 22:57:17.973459|INFO    |Accounting    |   |licensed to       : Anonymous
+2020-08-30 22:57:17.973475|INFO    |Accounting    |   |type              : No License
+2020-08-30 22:57:17.973491|INFO    |Accounting    |   |starting date     : Sat Feb  1 00:00:00 2020
+2020-08-30 22:57:17.973504|INFO    |Accounting    |   |ending date       : Mon Feb  1 00:00:00 2021
+2020-08-30 22:57:17.973515|INFO    |Accounting    |   |max virtualservers: 1
+2020-08-30 22:57:17.973526|INFO    |Accounting    |   |max slots         : 32
+2020-08-30 22:57:19.112429|INFO    |              |   |Puzzle precompute time: 1104
+2020-08-30 22:57:19.114463|INFO    |FileManager   |   |listening on 0.0.0.0:30033, [::]:30033
+2020-08-30 22:57:19.114995|INFO    |VirtualSvrMgr |   |executing monthly interval
+2020-08-30 22:57:19.115076|INFO    |VirtualSvrMgr |   |reset virtualserver traffic statistics
+2020-08-30 22:57:19.152456|INFO    |Query         |   |listening for query on 0.0.0.0:10011, [::]:10011
+2020-08-30 22:57:19.152568|INFO    |CIDRManager   |   |updated query_ip_whitelist ips: 127.0.0.1/32, ::1/128, 
+2020-08-30 22:57:19.378623|INFO    |              |   |myTeamSpeak identifier revocation list was downloaded successfully - all related features are activated
+2020-08-30 23:00:50.459280|INFO    |ServerMain    |   |Received signal SIGTERM, shutting down.

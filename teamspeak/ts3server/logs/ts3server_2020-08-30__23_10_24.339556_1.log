@@ -1,0 +1,7 @@
+2020-08-30 23:10:25.509883|INFO    |VirtualServerBase|1  |listening on 0.0.0.0:9987, [::]:9987
+2020-09-01 15:59:25.647193|INFO    |PktHandler    |1  |Dropping client 34 because of ping timeout 19 0 0
+2020-09-01 16:00:22.747295|INFO    |PktHandler    |1  |Dropping client 37 because of ping timeout 19 0 0
+2020-09-01 16:01:14.839761|INFO    |PktHandler    |1  |Dropping client 38 because of ping timeout 19 0 0
+2020-09-01 16:02:31.962491|INFO    |PktHandler    |1  |Dropping client 39 because of ping timeout 19 0 0
+2020-09-01 16:06:29.355728|INFO    |PktHandler    |1  |Dropping client 40 because of ping timeout 19 0 0
+2020-09-01 20:56:48.522421|INFO    |VirtualServerBase|1  |stopped
