@@ -1,3 +1,0 @@
-2020-08-30 23:00:52.792930|INFO    |VirtualServerBase|1  |listening on 0.0.0.0:9987, [::]:9987
-2020-08-30 23:05:41.654223|INFO    |VirtualServer |1  |client 'senninFABIO'(id:3) changed default admin channelgroup to 'Guest'(id:8)
-2020-08-30 23:10:23.680590|INFO    |VirtualServerBase|1  |stopped
