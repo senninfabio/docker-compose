@@ -1,0 +1,11 @@
+version: '2'
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns:latest
+    container_name: Cloudflare-DNS
+    restart: always
+    environment:
+      - API_KEY=8I_WigjfV3UFfkjtr4OCZ94cvH0Em-HiU0uqwDUc
+      - ZONE=senninfabio.site
+      - PROXIED=true
+    network_mode: bridge

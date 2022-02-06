@@ -1,0 +1,136 @@
+version: '3.1'
+#
+services:
+
+  db:
+    image: fametec/bacula-catalog:11.0.5
+    container_name: Bacula-Catalog
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: bacula
+      POSTGRES_USER: bacula
+      POSTGRES_DB: bacula
+    # volumes:
+    #   - pgdata:/var/lib/postgresql/data:rw
+    ports:
+      - 5432:5432
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.2
+#
+  bacula-dir:
+    image: fametec/bacula-director:11.0.5
+    container_name: Bacula-DIR
+    restart: always
+    volumes:
+      - ./etc:/opt/bacula/etc:ro
+    depends_on: 
+      - db      
+    ports:
+      - 9101:9101
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.3
+#
+  bacula-sd:
+    image: fametec/bacula-storage:11.0.5
+    container_name: Bacula-SD
+    restart: always
+    depends_on:
+      - bacula-dir
+      - db
+    volumes:
+      - ./etc:/opt/bacula/etc:ro
+    ports:
+      - 9103:9103
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.4
+#
+  bacula-fd:
+    image: fametec/bacula-client:11.0.5
+    container_name: Bacula-FD
+    restart: always
+    depends_on:
+      - bacula-sd
+      - bacula-dir
+      - db
+    volumes:
+      - ./etc:/opt/bacula/etc:ro
+    ports:
+      - 9102:9102
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.5
+#
+  baculum-api:
+    image: fametec/baculum-api:11.0.5
+    container_name: Bacula-Baculum-API
+    restart: always
+    depends_on: 
+      - db
+      - bacula-dir
+    volumes:
+      - ./etc/bconsole.conf:/opt/bacula/etc/bconsole.conf:ro
+      - ./etc/baculum:/etc/baculum:rw
+    ports:
+      - 9096:9096
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.6
+
+#
+  baculum-web:
+    image: fametec/baculum-web:11.0.5
+    container_name: Bacula-Baculum-WEB
+    restart: always
+    depends_on: 
+      - baculum-api
+    volumes:
+      - ./etc/bconsole.conf:/opt/bacula/etc/bconsole.conf:ro
+      - ./etc/baculum:/etc/baculum:rw
+    ports:
+      - 9095:9095
+    networks:
+       bacula:
+        ipv4_address: 10.250.0.7
+        
+
+networks:
+  bacula:
+    external: true
+    
+    
+# CRIAR REDE PARA ESSE CONTAINER
+# docker network create bacula --subnet=10.250.0.0/29
+# Erros de dependencias dar o seguintes comandos: (  chown -R 48 /etc/ e chmod -R 777 /mnt/bacula/etc/baculum/ )
+        
+
+# 
+#volumes: 
+#  pgdata:
+#
+#  gmail:
+#    image: fametec/postfix:gmail
+#    restart: unless-stopped
+#    depends_on:
+#      - bacula-dir
+#    # ports:
+#    #  - 30025:25
+#    environment:
+#      GMAIL_USER: xxxxxxxx
+#      GMAIL_PASS: xxxxxxxx
+#
+#  smtp2tg:
+#    image: b3vis/docker-smtp2tg
+#    restart: unless-stopped
+#    volumes:
+#      - ./etc/smtp2tg.toml:/config/smtp2tg.toml:ro
+#    #    ports:
+#    #  - "31025:25"
+#    depends_on:
+#      - bacula-dir
+#
+# 
+#volumes: 
+#  pgdata:
